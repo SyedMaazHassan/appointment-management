@@ -1,0 +1,107 @@
+{% extends 'inc/main_base.html' %}
+{% load static %}
+{% block content %}
+
+   <!-- SIGN-IN FORM  -->
+   <div style="margin: 13rem auto 10rem auto;" class="container-fluid d-flex justify-content-center">
+
+    <!-- create a new account -->
+    <div style="border-radius: 12px;" class="sign-up-box p-5 my-shadow conatiner">
+      <h4 class="">Sign Up</h4>
+      <h3 class="pb-2 text-primary">Create your Account
+      </h3>
+      <form action="" method="POST" class="register-form outer-top-xs">
+        {% csrf_token %}
+
+        <div class="pb-2 form-group">
+          <label class="info-title" for="exampleInputEmail1">First Name<span>*</span></label>
+          <p>
+            {{ form.first_name }}
+          </p>
+        </div>
+
+      
+        
+        <div class="pb-2 form-group">
+          <label class="info-title" for="exampleInputEmail1">Last Name<span>*</span></label>
+          <p>
+            {{ form.last_name }}
+          </p>
+        </div>
+
+        
+
+        <div class="pb-2 form-group">
+          <label class="info-title" for="exampleInputEmail1">Email
+            Address <span>*</span></label>
+          <p>
+            <input type="hidden" name="username" id="id_username">
+            {{ form.email }}
+          </p>
+        </div>
+
+
+        <div class="pb-2 form-group">
+          <label class="info-title" for="exampleInputEmail1">Phone<span>*</span></label>
+          <p>
+            {{ form.phone }}
+          </p>
+        </div>
+        
+
+       
+        
+
+        <div class="pb-2 form-group">
+          <label class="info-title" for="exampleInputEmail1">Password<span>*</span></label>
+          <p>
+            {{ form.password1 }}
+          </p>
+        </div>
+
+        <div class="pb-1 form-group">
+          <label class="info-title" for="exampleInputEmail1">Confirm Password<span>*</span></label>
+          <p>
+            {{ form.password2 }}
+          </p>
+        </div>
+
+        <div class="container">
+          <p class="text-danger" style="color: red;">
+            {{ form.errors }}
+          </p>
+        </div>
+
+        <!-- <div class="pb-1 form-group">
+          <label class="info-title" for="exampleInputPassword1">Password
+            <span>*</span></label>
+          <input type="password" class="sign-in-inputs form-control unicase-form-control text-input"
+            id="exampleInputPassword1" name="password">
+        </div> -->
+
+        <!-- <input type="hidden" name="next" value="{{ request.GET.next }}" /> -->
+        <button style="border-radius: 5px;" type="submit"
+          class="btn-upper btn btn-primary checkout-page-button">Sign up</button>
+      </form>
+
+
+    </div>
+
+  </div>
+
+<script>
+  $("#id_phone").val("");
+  $("#id_last_name, #id_first_name").prop("required", true);
+  document.getElementById("id_first_name").autofocus;
+  $("#id_first_name").attr("autofocus", true);
+  $("#id_email").on("keyup", function () {
+    console.log(this.value);
+      $("#id_username").val(this.value);
+  });
+</script>
+
+{% endblock %}
+
+
+
+

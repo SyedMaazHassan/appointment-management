@@ -1,0 +1,120 @@
+input{
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    border: 0.1rem solid rgb(206, 206, 206);
+    border-radius: 5px;
+    transition-property: all;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+}
+
+input:focus-within{
+    border: 0.1rem solid #007aff;
+}
+
+
+.sign-up-box{
+    width: 50vw;
+}
+
+@media screen and (max-width: 768px) {
+    .sign-up-box{
+        width: 100%;
+    }
+    
+}
+
+.doc-img img{
+    width: 9rem !important;
+}
+
+.pat-img{
+    width: 4rem;
+}
+
+.doc-info-head{
+    border-radius: 12px;
+}
+
+.doc-desc-head{
+    border-radius: 12px;
+}
+
+.social-icons{
+    font-size: 1.9rem;
+    transition-property: all;
+    transition-duration: 0.325s;
+    transition-timing-function: ease-in-out;
+    border-radius: 50%;
+    border: 0.1rem solid #2c4964;
+    margin-right: 0.25rem;
+}
+
+.social-icons:hover{
+    color: #2c4964;
+    background-color: #eee;
+}
+
+
+.bg-Scheduled{
+    background-color: #2c4964;
+}
+
+.bg-Late{
+    background-color: #f74040;
+}
+
+.bg-Completed{
+    background-color: #089e30;
+}
+
+.badge{
+    border-radius:100px;
+}
+
+
+
+.my-shadow{
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+}
+
+
+.errorlist{
+    color: red;
+}
+
+.mk-pointer{
+    cursor: pointer;
+}
+
+.cancel-button{
+    background-color: #eeeeee;
+    border-radius: 100%;
+    padding: 3px;
+}
+
+.radius-10{
+    border-radius: 10px;
+}
+
+
+.duration-option{
+    cursor: pointer;
+    transition-duration: 0.25s;
+}
+
+
+.duration-option-selected{
+    cursor: pointer;
+    box-shadow: inset 0 0 0 1px #1a73e8;
+}
+
+
+.border-100{
+    border-radius: 100%;
+}
+
+.bg-light-grey{
+    background-color: #f7f7f7;
+}

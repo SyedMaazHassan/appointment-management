@@ -1,0 +1,65 @@
+{% extends 'inc/main_base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <main id="main">
+
+        <!-- ======= Doctors Section ======= -->
+        <section id="doctors" class="mt-5 doctors">
+            <div class="mt-5 container">
+
+                <div class="pb-3 mt-5 section-title">
+                    <h2>All Doctors</h2>
+                    <p></p>
+                </div>
+                <br>
+
+                <div class="row">
+
+                    {% for doctor in doctors %}
+                    <div class="col-lg-6 mb-4">
+                        <div class="pb-2 my-shadow member d-flex align-items-start">
+                            <div class="pic"><img src="media/{{ doctor.user.get_profile_picture }}"
+                                    class="img-fluid" alt=""></div>
+                            <div class="member-info mb-0">
+                                <a href="{% url 'application:doctor' doctor.id %}">
+                                    <h4>{{ doctor.user.get_full_name }}</h4>
+                                </a>
+
+                                <span>{{ doctor.designation }}</span>
+                                <p>{{ doctor.tagline }}</p>
+                                <div class="social">
+                                    {% if doctor.social_links %}
+
+                                    <div class="p-1 d-flex ">
+                                        {% for social_link in doctor.social_links.get_list %}
+                                        <div class="mx-1">
+                                            <a href="{{ social_link.1 }}" class="twitter" target="_blank"><i class="{{ social_link.0 }} ml-3"></i></a>
+                                        </div>
+                                        {% endfor %}
+
+
+                                        
+                                    </div>
+                                   
+                                    {% endif %}
+                                    <!-- <a href=""><i class="ri-twitter-fill"></i></a>
+                                    <a href=""><i class="ri-facebook-fill"></i></a>
+                                    <a href=""><i class="ri-instagram-fill"></i></a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+        </section><!-- End Doctors Section -->
+
+
+    </main><!-- End #main -->
+
+{% endblock %}
